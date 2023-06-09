@@ -1,0 +1,64 @@
+
+#include <iostream>
+
+using namespace std;
+
+class Tiempo
+{
+    private: 
+    
+    int segundos = 0;
+    int minutos = 0;
+    int horas = 0;
+    
+    public:
+    
+    void Conversion()
+    {
+        horas = segundos/3600;
+        minutos = (segundos%3600)/60;
+        segundos = (segundos%3600)%60;
+    }
+    
+    void Menu()
+    {
+        cout << "Ingresa la cantidad de segundos que quieres convertir: ";
+        cin>> segundos;
+            
+        for(int i; segundos<0; i++)
+        {
+            if(segundos<0)
+            {
+                cout << "Ingresa una cantidad valida"<<endl;
+                
+            }
+            cout << "Ingresa la cantidad de segundos que quieres convertir: ";
+            cin>> segundos;
+        }
+        
+        
+        Conversion();
+        
+        cout<<endl;
+        cout<< "Equivale a "<<horas<<" hora(s) "<<minutos<< " minuto(s) y "<<segundos<<" segundos";
+    }
+    
+    int GetSegundos()
+    {
+        return segundos;
+    }
+    
+};
+
+
+
+
+int main()
+{
+    Tiempo contador;
+    
+    
+    contador.Menu();
+    
+    return 0;
+}

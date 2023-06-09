@@ -1,0 +1,52 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+class Millas
+{
+    private: 
+    
+    float millas = 0;
+    float metros = 0;
+    
+    public:
+    
+    void Conversion()
+    {
+        metros = millas * 1852;
+    }
+    
+    void Menu()
+    {
+        cout << "Bienvenido al convertidor de Millas Marinas a metros" << endl;
+        cout << "Ingrese el numero de millas que quiere convertir: ";
+        cin >> millas;
+        
+        for(int i; millas<0; i++)
+        {
+            if(millas<0)
+            {
+                cout << "Ingresa una cantidad valida"<<endl;
+                
+            }
+            cout << "Ingresa la cantidad de Millas que quieres convertir: ";
+            cin>> millas;
+        }
+
+        Conversion();
+    
+        cout << millas<< " millas marinas Equivalen a "<< metros<<endl;
+    }
+};
+
+int main()
+{
+    
+    Millas objeto;
+    
+    objeto.Menu();
+    
+    return 0;
+}
